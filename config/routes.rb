@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :recipes
 
   get '/recipes/:id/add_ingredients' => 'recipes#add_ingredients', as: 'add_ingredients'
+  
   post '/recipes/:id/add_ingredients' => 'recipes#create_ingredients'
 
 end
