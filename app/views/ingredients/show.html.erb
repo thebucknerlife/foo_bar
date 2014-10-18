@@ -1,4 +1,6 @@
-<h1><%= @ingredient.name %></h1>
+<h1><%= @ingredient.name.capitalize %></h1>
+
+<h2>This ingredient is in the following recipes:</h2>
 
 <ul>
   <% @ingredient.recipes.each do |recipe| %>

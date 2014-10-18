@@ -1,0 +1,13 @@
+<h1>Add Ingredients to <%= @recipe.name %></h1>
+
+<%= form_tag do |f| %>
+
+  <% Ingredient.all.each do |i| %>
+    <br>
+    <%= check_box_tag 'ingredients[]', i.id %>
+    <%= label_tag i.name %>
+  <% end %>
+
+  <%= submit_tag "Add Ingredients" %>
+
+<% end %>

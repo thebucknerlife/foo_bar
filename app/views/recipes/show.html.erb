@@ -1,7 +1,12 @@
 <h1><%= @recipe.name %></h1>
 
-<ul>
+<h2>Ingredients</h2>
+
+<table class='table'>
   <% @recipe.ingredients.each do |i| %>
-    <li><%= i.quantity(@recipe) %> - <%= link_to i.name, ingredient_path(i.id) %></li>
+    <tr>
+      <td><%= i.quantity(@recipe) %></td>
+      <td><%= link_to i.name, ingredient_path(i.id) %></td>
+    </tr>
   <% end %>
-</ul>
+</table>
