@@ -26,6 +26,11 @@
   <% end %>
   <!-- End snippet for flash messages -->
 
+  <ul>
+    <li><%= link_to "All Recipes", recipes_path %></li>
+    <li><%= link_to "All Ingredients", ingredients_path %></li>
+  </ul>
+
   <!-- Renders the view file for this action -->
   <%= yield %>
   <!-- Done rendering the view. -->
