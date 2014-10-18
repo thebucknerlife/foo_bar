@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FooBar</title>
+  <title>Foo Bar | The Best Foo Bartender Ever</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class='container'>
 
-<%= yield %>
+  <!-- Begin snippet for flash messages -->
+  <% flash.each do |key, array_of_strings| %>
+    <div class='alert alert-<%= key %>' role='alert'>
+      <ul>
+        <% array_of_strings.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <!-- End snippet for flash messages -->
+
+  <!-- Renders the view file for this action -->
+  <%= yield %>
+  <!-- Done rendering the view. -->
+
+  <!-- You could potentially put some 'footer' stuff down here. -->
 
 </body>
 </html>
